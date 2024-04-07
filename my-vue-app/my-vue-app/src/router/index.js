@@ -36,10 +36,8 @@ const routes = [
     component: () => import('../views/Login.vue')
   }
 ]
-
 const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
-
 export default router

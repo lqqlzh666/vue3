@@ -35,7 +35,6 @@ export default createStore({
     closeTab(state, val) {
       let res = state.tabsList.findIndex(item => item.name === val.name)
       state.tabsList.splice(res, 1)
-
     },
     setMenu(state, val) {
       state.menu = val
@@ -47,9 +46,7 @@ export default createStore({
       }
       const menu = JSON.parse(localStorage.getItem('menu'))
       state.menu = menu
-
       const menuArray = []
-
       menu.forEach(item => {
         if (item.children) {
           item.children = item.children.map(item => {
@@ -65,7 +62,6 @@ export default createStore({
           menuArray.push(item)
         }
       })
-
       menuArray.forEach(item => {
         router.addRoute('home1', item)
       })

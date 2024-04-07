@@ -1,7 +1,12 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
-</script>
+// import {useStore} from 'vuex';
+// import {useRouter} from 'vue-router'
 
+// const store =useStore();
+// const router=useRouter()
+// store.commit('addMenu',router);
+
+</script>
 <template>
   <router-view/>
 </template>

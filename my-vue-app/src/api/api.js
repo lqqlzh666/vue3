@@ -31,5 +31,41 @@ export default{
       data:params
       //data;{total:0,page:1}
     })
+  },
+  addUser(params){
+    return request({
+      url:'/user/add',
+      method:'post',
+      mock:false,
+      data:params
+      //data;{total:0,page:1}
+    })
+  },
+  editUser(params){
+    return request({
+      url:'/user/edit',
+      method:'post',
+      mock:false,
+      data:params
+      //data;{total:0,page:1}
+    })
+  },
+  deleteUser(params){
+    return request({
+      url:'/user/delete',
+      method:'get',
+      mock:false,
+      data:params
+      //data;{total:0,page:1}
+    })
+  },
+  //根据用户的用户名不同，返回不一样的菜单列表
+  getMenu(params){
+    return request({
+      url:'/permission/getMenu',
+      method:'post',
+      mock:false,
+      data:params
+    })
   }
 }

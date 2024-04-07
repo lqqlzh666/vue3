@@ -42,44 +42,46 @@ import {useRouter} from 'vue-router'
 import { useStore } from 'vuex';
 export default{
   setup(){
-    const store=useStore()
-    const list=[
-        {
-          path: '/user',
-          name: 'user',
-          label: '用户管理',
-          icon: 'user',
-          url: 'UserManage/UserManage'
-        },
-        {
-          label: '其他',
-          icon: 'location',
-          path:'/other',
-          children: [
-            {
-              path: '/page1',
-              name: 'page1',
-              label: '页面1',
-              icon: 'setting',
-              url: 'Other/PageOne'
-            },
-            {
-              path: '/page2',
-              name: 'page2',
-              label: '页面2',
-              icon: 'setting',
-              url: 'Other/PageTwo'
-            }
-          ]
-        }
-      ];
+      const store=useStore()
+      const list=[
+          {
+            path: '/user',
+            name: 'user',
+            label: '用户管理',
+            icon: 'user',
+            url: 'UserManage/UserManage'
+          },
+          {
+            label: '其他',
+            icon: 'location',
+            path:'/other',
+            children: [
+              {
+                path: '/page1',
+                name: 'page1',
+                label: '页面1',
+                icon: 'setting',
+                url: 'Other/PageOne'
+              },
+              {
+                path: '/page2',
+                name: 'page2',
+                label: '页面2',
+                icon: 'setting',
+                url: 'Other/PageTwo'
+              }
+            ]
+          }
+        ];
+      
       const router=useRouter();
       const noChildren=()=>{
-        return list.filter((item)=>!item.children);
+        return asyncList.filter((item)=>!item.children);
       };
       const hasChildren=()=>{
-        return list.filter((item)=>item.children);
+        return asyncList.filter((item)=>item.children);
       };
+
       const asyncList = store.state.menu;
       const clickMenu=(item)=>{
         router.push({
